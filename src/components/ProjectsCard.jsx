@@ -32,6 +32,7 @@ const Wrapper = styled.article`
     font-size: 24px;
     line-height: 30px;
     text-transform: capitalize;
+    margin-bottom: 10px;
   }
 
   .language {

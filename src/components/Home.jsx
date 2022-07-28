@@ -17,6 +17,11 @@ const Wrapper = styled.div`
     font-size: 20px;
     justify-content: space-between;
 
+    .title {
+      gap: 10px;
+      align-items: center;
+    }
+
     .navigation {
       gap: 10px;
       min-width: 100px;
@@ -103,19 +108,23 @@ const Home = () => {
       {repos.length >= 1 ? (
         <div className="wrapper">
           <div className="header flex">
-            <h2>GitHub Projects</h2>
+            <div className="flex title">
+              <i className="fa-solid fa-code"></i>
+              <h2>GitHub Projects</h2>
+            </div>
             <div className="flex ai-c navigation">
               <p>Next</p>
               <i class="fa-solid fa-arrow-right"></i>
             </div>
           </div>
           <ProjectWrapper className="flex f-c flex-center">
-            {repos.map((repo, n) => (
+            {repos.map((repo) => (
               <ProjectsCard
                 name={repo.name}
                 date={repo.date}
                 language={repo.language}
                 link={repo.url}
+                key={repo.id}
               />
             ))}
           </ProjectWrapper>
