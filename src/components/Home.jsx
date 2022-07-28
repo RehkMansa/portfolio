@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { format } from 'fecha';
+
+const Wrapper = styled.div``
 const Home = () => {
   const [repos, setRepos] = useState([]);
 
@@ -44,7 +46,7 @@ const Home = () => {
       });
   };
   return (
-    <div>
+    <Wrapper>
       <p>home</p>
       {repos.length >= 1
         ? repos.map((repo, n) => (
@@ -56,20 +58,9 @@ const Home = () => {
               updatedAt={repo.updatedAt}
             />
           ))
-        : 'Loading...'}
-    </div>
-  );
-};
-
-const RepoCard = (props) => {
-  return (
-    <div className="flex-20">
-      id: {props.count}
-      <p>Name:{props.name}</p>
-      <span>
-        Created At:{props.createdAt}, Updated At: {props.updatedAt}
-      </span>
-    </div>
+        : <div>
+          </div>}
+    </Wrapper>
   );
 };
 

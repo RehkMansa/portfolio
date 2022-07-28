@@ -61,6 +61,10 @@ const NavWrap = styled.div`
   }
 `;
 
+const SocialsWrapper = styled.div`
+  margin-top: 50px;
+`;
+
 const NavItem = (props) => {
   return (
     <NavWrap>
@@ -92,7 +96,9 @@ const LeftSection = () => {
           <NavItem name="Resume" link="resume" number={'01'} />
           <NavItem name="Articles" link="write-ups" number={'02'} />
         </Navigation>
-        <i className="fab fa-github"></i>
+        <SocialsWrapper>
+          <i className="fab fa-github"></i>
+        </SocialsWrapper>
       </div>
     </Wrapper>
   );
