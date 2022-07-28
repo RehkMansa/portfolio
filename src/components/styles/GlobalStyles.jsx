@@ -14,10 +14,11 @@ const GlobalStyle = createGlobalStyle`
     --bg-dark: #151515;
     --text-dark: #949495;
     --text-white: #fff;
+    --text-alt: #f5f5fa;
   }
   html, body {
     height: 100%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
   }
   body {
     line-height: 1.5;
@@ -35,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
   }
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
-    hyphens: auto;
   }
   #root, #__next {
     isolation: isolate;
@@ -53,6 +53,11 @@ const GlobalStyle = createGlobalStyle`
     gap: 20px;
     flex-direction: column;
   }
+  
+  .f-c{
+    flex-direction: column;
+  }
+
   .flex-start{
     align-items: start;
     justify-content: start;
@@ -76,6 +81,8 @@ const GlobalStyle = createGlobalStyle`
 
   h1,h2,h3,h4,h5,h6{
     color: var(--text-white); 
+    line-height: 1.2;
+    font-family: 'Ubuntu', sans-serif;
   }
 `;
 
