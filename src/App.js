@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import Home from './components/Home';
 import Layout from './components/Layout';
+import Resume from './components/Resume';
 import GlobalStyle from './components/styles/GlobalStyles';
 import Writings from './components/Writings';
 
@@ -20,8 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="resume" element={<Home />} />
-          <Route path="writing" element={<Writings />} />
+          <Route path="resume" element={<Resume />} />
+          <Route path="write-ups" element={<Writings />} />
         </Route>
       </Routes>
     </AppContainer>

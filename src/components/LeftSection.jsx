@@ -33,7 +33,7 @@ const Wrapper = styled.div`
 
 const Navigation = styled.div`
   gap: 50px;
-  margin-top: 30px;
+  margin-top: 50px;
 `;
 
 const NavWrap = styled.div`
@@ -90,8 +90,9 @@ const LeftSection = () => {
         <Navigation className="flex f-c ac-s">
           <NavItem name="Projects" link="/" number={'00'} />
           <NavItem name="Resume" link="resume" number={'01'} />
-          <NavItem name="Writing" link="writing" number={'02'} />
+          <NavItem name="Articles" link="write-ups" number={'02'} />
         </Navigation>
+        <i className="fab fa-github"></i>
       </div>
     </Wrapper>
   );
