@@ -17,7 +17,7 @@ const Fixed = styled.div`
 `;
 
 const MainWrapper = styled.main`
-  padding: 100px 50px;
+  padding: 70px 50px 100px;
   padding-right: 16%;
   height: 100vh;
   overflow-y: auto;

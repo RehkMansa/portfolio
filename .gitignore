@@ -24,3 +24,4 @@ yarn-error.log*
 src/components/style.css
 src/components/blank.js
 src/components/utils
+.vscode/settings.json

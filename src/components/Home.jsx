@@ -10,6 +10,51 @@ const Wrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .header {
+    text-align: left;
+    align-self: start;
+    margin-bottom: 30px;
+    font-size: 20px;
+    justify-content: space-between;
+
+    .navigation {
+      gap: 10px;
+      min-width: 100px;
+      justify-content: end;
+      font-size: 16px;
+      transition: all 1s ease-in-out;
+      p {
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: 400;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+      }
+    }
+
+    .navigation:hover {
+      cursor: pointer;
+      gap: 20px;
+      color: var(--text-white);
+
+      p {
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+`;
+
+const ProjectWrapper = styled.div`
+  &:hover > article {
+    opacity: 0.4;
+  }
+  & > article:hover {
+    opacity: 1;
+    box-shadow: 0 -2px 10px 5px rgba(21, 21, 21, 0.6);
+  }
 `;
 const Home = () => {
   const [repos, setRepos] = useState([]);
@@ -56,10 +101,24 @@ const Home = () => {
   return (
     <Wrapper>
       {repos.length >= 1 ? (
-        <div className="flex-20 f-c">
-          {repos.map((repo, n) => (
-            <ProjectsCard name={repo.name} date={repo.date} />
-          ))}
+        <div className="wrapper">
+          <div className="header flex">
+            <h2>GitHub Projects</h2>
+            <div className="flex ai-c navigation">
+              <p>Next</p>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+          <ProjectWrapper className="flex f-c flex-center">
+            {repos.map((repo, n) => (
+              <ProjectsCard
+                name={repo.name}
+                date={repo.date}
+                language={repo.language}
+                link={repo.url}
+              />
+            ))}
+          </ProjectWrapper>
         </div>
       ) : (
         <div className="loader">

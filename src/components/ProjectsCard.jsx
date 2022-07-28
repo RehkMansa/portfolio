@@ -1,11 +1,20 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
-  padding: 30px;
+const Wrapper = styled.article`
+  padding: 40px;
   background-color: var(--bg-alt);
-
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  margin-bottom: 10px;
   .icon-wrapper {
-    margin-top: 20px;
+    margin-top: 10px;
     gap: 5px;
     font-size: 1.4rem;
     align-items: center;
@@ -14,11 +23,39 @@ const Wrapper = styled.div`
       font-size: 1.2rem;
     }
   }
+
+  &:hover {
+    transform: scale(1.12);
+  }
+
+  h4 {
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: capitalize;
+  }
+
+  .language {
+    font-size: 10px;
+    line-height: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text-alt);
+    opacity: 0.97;
+  }
 `;
-const ProductCards = ({ name, language, desc, date, type = 'github' }) => {
+const ProductCards = ({
+  name,
+  language,
+  desc,
+  date,
+  type = 'github',
+  link,
+}) => {
   return (
     <Wrapper>
-      <p>{language}</p>
+      <p className="language">{language}</p>
       <h4>{name}</h4>
       {desc && <p className="description">{desc}</p>}
       <div className="meta">
@@ -30,10 +67,15 @@ const ProductCards = ({ name, language, desc, date, type = 'github' }) => {
         )}
 
         {type === 'github' ? (
-          <div className="icon-wrapper flex ai-c">
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            className="icon-wrapper flex ai-c"
+          >
             <i className="fa-solid fa-code-branch"></i>
             <p>GitHub</p>
-          </div>
+          </a>
         ) : (
           <i className="icon-wrapper fas fa-eye"></i>
         )}
