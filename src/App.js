@@ -8,8 +8,6 @@ import Writings from './components/Writings';
 
 const AppContainer = styled.main`
   & > * {
-    padding-left: 7%;
-    padding-right: 7%;
     overflow-x: hidden;
   }
 `;

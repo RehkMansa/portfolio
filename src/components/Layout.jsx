@@ -12,13 +12,17 @@ const Wrapper = styled.div`
 const Fixed = styled.div`
   max-width: 560px;
   height: 100vh;
-  padding: 100px 50px;
-  // border: 1px solid red;
+  padding: 100px 0px;
+  padding-left: 16%;
 `;
 
 const MainWrapper = styled.main`
   padding: 100px 50px;
-`
+  padding-right: 16%;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+`;
 const Layout = () => {
   return (
     <Wrapper>

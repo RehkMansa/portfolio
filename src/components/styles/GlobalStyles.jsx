@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     font-family: 'Ubuntu', sans-serif;
     color: inherit;
+    outline: none;
   }
 
 

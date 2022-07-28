@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react';
 import { format } from 'fecha';
+import styled from 'styled-components';
+import ProjectsCard from './ProjectsCard';
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
 const Home = () => {
   const [repos, setRepos] = useState([]);
 
@@ -28,7 +37,6 @@ const Home = () => {
             language,
           } = arr;
 
-
           const element = {
             id,
             name,
@@ -47,19 +55,17 @@ const Home = () => {
   };
   return (
     <Wrapper>
-      <p>home</p>
-      {repos.length >= 1
-        ? repos.map((repo, n) => (
-            <RepoCard
-              key={repo.id}
-              count={n + 1}
-              name={repo.name}
-              createdAt={repo.createdAt}
-              updatedAt={repo.updatedAt}
-            />
-          ))
-        : <div>
-          </div>}
+      {repos.length >= 1 ? (
+        repos.map((repo, n) => <ProjectsCard name={repo.name} />)
+      ) : (
+        <div className="loader">
+          <img src="/images/loader.gif" alt="preloader" />
+
+          <p style={{ marginTop: 20 }}>
+            <i>Loading...</i>
+          </p>
+        </div>
+      )}
     </Wrapper>
   );
 };
