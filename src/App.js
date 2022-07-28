@@ -6,8 +6,7 @@ import GlobalStyle from './components/styles/GlobalStyles';
 
 const AppContainer = styled.main`
   & > * {
-    padding-left: 7%;
-    padding-right: 7%;
+    padding: 20px 7%;
     overflow-x: hidden;
   }
 `;
