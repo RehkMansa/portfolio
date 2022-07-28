@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   :root{
     font-size: 62.5%;
     --bg-dark: #151515;
-    ---bg-alt: #202022;
+    --bg-alt: #202022;
     --text-dark: #949495;
     --text-white: #fff;
     --text-alt: #f5f5fa;

@@ -2,7 +2,18 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   padding: 30px;
-  background-color: var(--bg0-alt);
+  background-color: var(--bg-alt);
+
+  .icon-wrapper {
+    margin-top: 20px;
+    gap: 5px;
+    font-size: 1.4rem;
+    align-items: center;
+
+    i {
+      font-size: 1.2rem;
+    }
+  }
 `;
 const ProductCards = ({ name, language, desc, date, type = 'github' }) => {
   return (
@@ -10,18 +21,23 @@ const ProductCards = ({ name, language, desc, date, type = 'github' }) => {
       <p>{language}</p>
       <h4>{name}</h4>
       {desc && <p className="description">{desc}</p>}
-      {date && (
-        <div className="date-meta">
-          <p>Last Updated {date.updatedAt}</p>
-          <p>Created At {date.createdAt}</p>
-        </div>
-      )}
+      <div className="meta">
+        {date && (
+          <div className="date-meta flex-20 ai-c">
+            <p>Last Updated: {date.updatedAt}</p>
+            <p>Created At: {date.createdAt}</p>
+          </div>
+        )}
 
-      {type === 'github' ? (
-        <i className="fa-solid fa-code-branch"></i>
-      ) : (
-        <i className="fas fa-eye"></i>
-      )}
+        {type === 'github' ? (
+          <div className="icon-wrapper flex ai-c">
+            <i className="fa-solid fa-code-branch"></i>
+            <p>GitHub</p>
+          </div>
+        ) : (
+          <i className="icon-wrapper fas fa-eye"></i>
+        )}
+      </div>
     </Wrapper>
   );
 };

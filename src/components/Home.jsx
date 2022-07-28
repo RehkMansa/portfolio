@@ -32,7 +32,6 @@ const Home = () => {
             html_url,
             created_at,
             updated_at,
-            pushed_at,
             description,
             language,
           } = arr;
@@ -43,9 +42,10 @@ const Home = () => {
             description,
             url: html_url,
             language,
-            createdAt: format(new Date(created_at), 'isoDate'),
-            updatedAt: format(new Date(updated_at), 'isoDate'),
-            pushedAt: format(new Date(pushed_at), 'isoDate'),
+            date: {
+              createdAt: format(new Date(created_at), 'isoDate'),
+              updatedAt: format(new Date(updated_at), 'isoDate'),
+            },
           };
           if (fork) return;
           newArr.push(element);
@@ -56,7 +56,11 @@ const Home = () => {
   return (
     <Wrapper>
       {repos.length >= 1 ? (
-        repos.map((repo, n) => <ProjectsCard name={repo.name} />)
+        <div className="flex-20 f-c">
+          {repos.map((repo, n) => (
+            <ProjectsCard name={repo.name} date={repo.date} />
+          ))}
+        </div>
       ) : (
         <div className="loader">
           <img src="/images/loader.gif" alt="preloader" />
