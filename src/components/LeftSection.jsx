@@ -1,9 +1,7 @@
 const LeftSection = () => {
   return (
     <div>
-      <p>
-        left <section></section>
-      </p>
+      <p>left section</p>
     </div>
   );
 };

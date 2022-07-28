@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
   html, body {
     height: 100%;
+    font-family: 'Ubuntu', sans-serif;
   }
   body {
     line-height: 1.5;
