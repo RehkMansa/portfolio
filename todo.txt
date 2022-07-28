@@ -1,0 +1,18 @@
+1. Preloader => image shrinks or scales down 
+2. Cursor animation
+3. Icons font-awesome
+4. Mode Toggler => toggle between dark mode and light mode
+
+
+Components - Route
+  -Homepage
+  -Work
+  -blog
+
+
+-Major Components
+  - navbar
+    -navbar mobile
+  -left section
+  -right section
+  -cards
