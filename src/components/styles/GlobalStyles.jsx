@@ -20,6 +20,14 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-family: 'Source Sans Pro', sans-serif;
   }
+
+  a, a:hover, a:visited{
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: inherit;
+  }
+
+
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
@@ -53,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
     gap: 20px;
     flex-direction: column;
   }
-  
+
   .f-c{
     flex-direction: column;
   }
@@ -63,14 +71,18 @@ const GlobalStyle = createGlobalStyle`
     justify-content: start;
   }
   .flex-center{
-    align-items: start;
-    justify-content: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .jc-sb{
     justify-content: space-between;
   }
   .ai-c{
     align-items: center;
+  }
+  .jc-s{
+    justify-content: start;
   }
   .text-white{
     color: var(--text-white);

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -32,7 +33,44 @@ const Wrapper = styled.div`
 
 const Navigation = styled.div`
   gap: 50px;
-`
+  margin-top: 30px;
+`;
+
+const NavWrap = styled.div`
+  a {
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    opacity: 0.89;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  a.active,
+  a:hover {
+    color: var(--text-white);
+    .line {
+      width: 48px;
+    }
+  }
+  .line {
+    width: 24px;
+    background-color: #fff;
+    height: 1px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+`;
+
+const NavItem = (props) => {
+  return (
+    <NavWrap>
+      <NavLink className="flex-center jc-s" to={props.link}>
+        <span>{props.number}</span> <span className="line"></span>
+        {props.name}
+      </NavLink>
+    </NavWrap>
+  );
+};
 
 const LeftSection = () => {
   return (
@@ -44,13 +82,15 @@ const LeftSection = () => {
       <div className="description">
         <p>
           Hello, I'm <span>Rehk</span>, a frontend developer. I love
-          <span> problem solving</span> and <span>critical thinking</span>, I
-          <span> live for</span> the challenge, I use coding as a tool to
+          <span> problem solving</span> and critical thinking, I live for the
+          challenge, I use coding as a tool to
           <span> solve problems</span>. I am currently interested in
           <span> building interactive</span> UI's for game development.
         </p>
-        <Navigation className='flex column '>
-
+        <Navigation className="flex f-c ac-s">
+          <NavItem name="Projects" link="/" number={'00'} />
+          <NavItem name="Resume" link="resume" number={'01'} />
+          <NavItem name="Writing" link="writing" number={'02'} />
         </Navigation>
       </div>
     </Wrapper>
