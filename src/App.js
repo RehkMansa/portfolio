@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Home from './components/Home';
 import Layout from './components/Layout';
 import GlobalStyle from './components/styles/GlobalStyles';
+import Writings from './components/Writings';
 
 const AppContainer = styled.main`
   & > * {
