@@ -14,7 +14,7 @@ const Wrapper = styled.article`
   width: 100%;
   margin-bottom: 10px;
   .icon-wrapper {
-    margin-top: 10px;
+    margin-top: 16px;
     gap: 5px;
     font-size: 1.4rem;
     align-items: center;
@@ -22,6 +22,10 @@ const Wrapper = styled.article`
     i {
       font-size: 1.2rem;
     }
+  }
+
+  a:hover {
+    color: var(--text-white);
   }
 
   &:hover {
