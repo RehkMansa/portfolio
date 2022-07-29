@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  // border: 1px solid red;
   .header {
     margin-bottom: 40px;
     h1 {
@@ -62,7 +63,18 @@ const NavWrap = styled.div`
 `;
 
 const SocialsWrapper = styled.div`
-  margin-top: 50px;
+  margin-top: 90px;
+  gap: 30px;
+  .icon-wrap {
+    gap: 10px;
+    color: var(--text-white);
+    opacity: 0.8;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 `;
 
 const NavItem = (props) => {
@@ -75,7 +87,14 @@ const NavItem = (props) => {
     </NavWrap>
   );
 };
-
+const Icon = ({ iconClass, name }) => {
+  return (
+    <div className="icon-wrap flex ai-c">
+      <i className={iconClass}></i>
+      <p>{name}</p>
+    </div>
+  );
+};
 const LeftSection = () => {
   return (
     <Wrapper>
@@ -96,8 +115,10 @@ const LeftSection = () => {
           <NavItem name="Resume" link="resume" number={'01'} />
           <NavItem name="Articles" link="write-ups" number={'02'} />
         </Navigation>
-        <SocialsWrapper>
-          <i className="fab fa-github"></i>
+        <SocialsWrapper className="flex-20 ai-c ">
+          <Icon iconClass="fab fa-github" name="GitHub" />
+          <Icon iconClass="fab fa-linkedin" name="Linkedin" />
+          <Icon iconClass="fa-solid fa-at" name="Email" />
         </SocialsWrapper>
       </div>
     </Wrapper>
