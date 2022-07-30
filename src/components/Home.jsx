@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { format } from 'fecha';
 import styled from 'styled-components';
 import ProjectsCard from './ProjectsCard';
+import LiveProjects from './LiveProjects';
 
 const Wrapper = styled.div`
   .loader {
@@ -137,15 +138,7 @@ const Home = () => {
                 onClickFunc={() => setCurrentTab(0)}
               />
               <ProjectWrapper className="flex f-c flex-center">
-                {repos.map((repo) => (
-                  <ProjectsCard
-                    name={repo.name}
-                    date={repo.date}
-                    language={repo.language}
-                    link={repo.url}
-                    key={repo.id}
-                  />
-                ))}
+                <LiveProjects />
               </ProjectWrapper>
             </>
           )}

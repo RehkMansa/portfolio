@@ -13,9 +13,14 @@ const Wrapper = styled.article`
     gap: 5px;
     font-size: 1.4rem;
     align-items: center;
+    font-weight: 700;
 
     i {
       font-size: 1.2rem;
+    }
+
+    &:hover {
+      color: var(--text-white);
     }
   }
 
@@ -34,7 +39,7 @@ const Wrapper = styled.article`
     font-weight: 700;
     font-family: 'Ubuntu', sans-serif;
     color: var(--text-alt);
-    opacity: 0.97;
+    opacity: 0.8;
   }
 
   &:hover {
@@ -49,8 +54,8 @@ const LinkWrap = styled.a`
   gap: 10px;
   flex-direction: column;
 
-  a:hover {
-    color: var(--text-white);
+  .description {
+    line-height: 1.5;
   }
 `;
 
@@ -67,8 +72,9 @@ const ProjectsCard = ({
       <LinkWrap href={link} target="_blank" rel="noreferrer">
         <p className="language">{language}</p>
         <h4>{name}</h4>
-        {desc && <p className="description">{desc}</p>}
         <div className="meta">
+          {desc && <p className="description">{desc}</p>}
+
           {date && (
             <div className="date-meta flex-20 ai-c">
               <p>Last Updated: {date.updatedAt}</p>
@@ -77,7 +83,7 @@ const ProjectsCard = ({
           )}
 
           {type === 'github' ? (
-            <a
+            <div
               href={link}
               target="_blank"
               rel="noreferrer"
@@ -85,9 +91,17 @@ const ProjectsCard = ({
             >
               <i className="fa-solid fa-code-branch"></i>
               <p>GitHub</p>
-            </a>
+            </div>
           ) : (
-            <i className="icon-wrapper fas fa-eye"></i>
+            <div
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              className="icon-wrapper flex ai-c"
+            >
+              <i className="fa-solid fa-eye"></i>
+              <p>{name}</p>
+            </div>
           )}
         </div>
       </LinkWrap>
