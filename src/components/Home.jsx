@@ -103,31 +103,52 @@ const Home = () => {
         setRepos(newArr);
       });
   };
+
+  const [currentTab, setCurrentTab] = useState(0);
   return (
     <Wrapper>
       {repos.length >= 1 ? (
         <div className="wrapper">
-          <div className="header flex">
-            <div className="flex title">
-              <i className="fa-solid fa-code"></i>
-              <h2>GitHub Projects</h2>
-            </div>
-            <div className="flex ai-c navigation">
-              <p>Next</p>
-              <i class="fa-solid fa-arrow-right"></i>
-            </div>
-          </div>
-          <ProjectWrapper className="flex f-c flex-center">
-            {repos.map((repo) => (
-              <ProjectsCard
-                name={repo.name}
-                date={repo.date}
-                language={repo.language}
-                link={repo.url}
-                key={repo.id}
+          {currentTab === 0 ? (
+            <>
+              <HeaderTab
+                title="Github"
+                text="Live Projects"
+                onClickFunc={() => setCurrentTab(1)}
               />
-            ))}
-          </ProjectWrapper>
+              <ProjectWrapper className="flex f-c flex-center">
+                {repos.map((repo) => (
+                  <ProjectsCard
+                    name={repo.name}
+                    date={repo.date}
+                    language={repo.language}
+                    link={repo.url}
+                    key={repo.id}
+                  />
+                ))}
+              </ProjectWrapper>
+            </>
+          ) : (
+            <>
+              <HeaderTab
+                title="Live Projects"
+                text="Back to Github"
+                prev={true}
+                onClickFunc={() => setCurrentTab(1)}
+              />
+              <ProjectWrapper className="flex f-c flex-center">
+                {repos.map((repo) => (
+                  <ProjectsCard
+                    name={repo.name}
+                    date={repo.date}
+                    language={repo.language}
+                    link={repo.url}
+                    key={repo.id}
+                  />
+                ))}
+              </ProjectWrapper>
+            </>
+          )}
         </div>
       ) : (
         <div className="loader">
@@ -139,6 +160,27 @@ const Home = () => {
         </div>
       )}
     </Wrapper>
+  );
+};
+
+const HeaderTab = (props) => {
+  return (
+    <div className="header flex">
+      <div className="flex title">
+        <i
+          className={`fa-solid ${props.prev ? 'fa-laptop-code' : 'fa-code'}`}
+        ></i>
+        <h2>{props.title}</h2>
+      </div>
+      <div onClick={props.onClickFunc} className="flex ai-c navigation">
+        <p>{props.text}</p>
+        <i
+          className={`fa-solid ${
+            props.prev ? 'fa-arrow-left' : 'fa-arrow-right'
+          }`}
+        ></i>
+      </div>
+    </div>
   );
 };
 
