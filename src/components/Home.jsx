@@ -63,10 +63,16 @@ const ProjectWrapper = styled.div`
   }
 `;
 const Home = ({ repos, setRepos }) => {
-  useEffect(() => {
+  const loader = () => {
     if (repos.length <= 0) {
       fetchRepos(setRepos);
     }
+    return;
+  };
+
+
+  useEffect(() => {
+    loader();
   }, []);
 
   const [currentTab, setCurrentTab] = useState(0);
