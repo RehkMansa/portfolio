@@ -134,7 +134,7 @@ const Home = () => {
                 title="Live Projects"
                 text="Back to Github"
                 prev={true}
-                onClickFunc={() => setCurrentTab(1)}
+                onClickFunc={() => setCurrentTab(0)}
               />
               <ProjectWrapper className="flex f-c flex-center">
                 {repos.map((repo) => (

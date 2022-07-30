@@ -5,11 +5,6 @@ const Wrapper = styled.article`
   background-color: var(--bg-alt);
   cursor: pointer;
   min-height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  gap: 10px;
-  flex-direction: column;
   transition: all 0.2s ease-in-out;
   width: 100%;
   margin-bottom: 10px;
@@ -22,14 +17,6 @@ const Wrapper = styled.article`
     i {
       font-size: 1.2rem;
     }
-  }
-
-  a:hover {
-    color: var(--text-white);
-  }
-
-  &:hover {
-    transform: scale(1.12);
   }
 
   h4 {
@@ -49,8 +36,25 @@ const Wrapper = styled.article`
     color: var(--text-alt);
     opacity: 0.97;
   }
+
+  &:hover {
+    transform: scale(1.12);
+  }
 `;
-const ProductCards = ({
+
+const LinkWrap = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  flex-direction: column;
+
+  a:hover {
+    color: var(--text-white);
+  }
+`;
+
+const ProjectsCard = ({
   name,
   language,
   desc,
@@ -60,33 +64,35 @@ const ProductCards = ({
 }) => {
   return (
     <Wrapper>
-      <p className="language">{language}</p>
-      <h4>{name}</h4>
-      {desc && <p className="description">{desc}</p>}
-      <div className="meta">
-        {date && (
-          <div className="date-meta flex-20 ai-c">
-            <p>Last Updated: {date.updatedAt}</p>
-            <p>Created At: {date.createdAt}</p>
-          </div>
-        )}
+      <LinkWrap href={link} target="_blank" rel="noreferrer">
+        <p className="language">{language}</p>
+        <h4>{name}</h4>
+        {desc && <p className="description">{desc}</p>}
+        <div className="meta">
+          {date && (
+            <div className="date-meta flex-20 ai-c">
+              <p>Last Updated: {date.updatedAt}</p>
+              <p>Created At: {date.createdAt}</p>
+            </div>
+          )}
 
-        {type === 'github' ? (
-          <a
-            href={link}
-            target="_blank"
-            rel="noreferrer"
-            className="icon-wrapper flex ai-c"
-          >
-            <i className="fa-solid fa-code-branch"></i>
-            <p>GitHub</p>
-          </a>
-        ) : (
-          <i className="icon-wrapper fas fa-eye"></i>
-        )}
-      </div>
+          {type === 'github' ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              className="icon-wrapper flex ai-c"
+            >
+              <i className="fa-solid fa-code-branch"></i>
+              <p>GitHub</p>
+            </a>
+          ) : (
+            <i className="icon-wrapper fas fa-eye"></i>
+          )}
+        </div>
+      </LinkWrap>
     </Wrapper>
   );
 };
 
-export default ProductCards;
+export default ProjectsCard;
