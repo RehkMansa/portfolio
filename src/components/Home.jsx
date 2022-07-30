@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { format } from 'fecha';
 import styled from 'styled-components';
 import ProjectsCard from './ProjectsCard';
 import LiveProjects from './LiveProjects';
+import { fetchRepos } from './utils/helper';
 
 const Wrapper = styled.div`
   .loader {
@@ -62,48 +62,12 @@ const ProjectWrapper = styled.div`
     box-shadow: 0 -2px 10px 5px rgba(21, 21, 21, 0.6);
   }
 `;
-const Home = () => {
-  const [repos, setRepos] = useState([]);
-
+const Home = ({ repos, setRepos }) => {
   useEffect(() => {
-    fetchRepos();
+    if (repos.length <= 0) {
+      fetchRepos(setRepos);
+    }
   }, []);
-
-  const fetchRepos = () => {
-    fetch('https://api.github.com/users/rehkmansa/repos?sort=updated')
-      .then((res) => res.json())
-      .then((data) => {
-        const newArr = [];
-
-        data.forEach((arr) => {
-          const {
-            id,
-            fork,
-            name,
-            html_url,
-            created_at,
-            updated_at,
-            description,
-            language,
-          } = arr;
-
-          const element = {
-            id,
-            name,
-            description,
-            url: html_url,
-            language,
-            date: {
-              createdAt: format(new Date(created_at), 'isoDate'),
-              updatedAt: format(new Date(updated_at), 'isoDate'),
-            },
-          };
-          if (fork) return;
-          newArr.push(element);
-        });
-        setRepos(newArr);
-      });
-  };
 
   const [currentTab, setCurrentTab] = useState(0);
   return (

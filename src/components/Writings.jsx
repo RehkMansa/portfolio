@@ -13,12 +13,14 @@ const Wrapper = styled.div`
   }
 
   a {
+    margin-top: 20px;
     border: 1px solid;
-    padding: 12px 30px;
-    
+    padding: 7px 21px;
+    transition: all 0.5s ease-in-out;
 
     &:hover {
       color: var(--text-white);
+      padding: 13px 27px;
     }
   }
 `;
