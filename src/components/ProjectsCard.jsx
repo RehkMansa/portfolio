@@ -45,6 +45,12 @@ const Wrapper = styled.article`
   &:hover {
     transform: scale(1.12);
   }
+
+  @media screen and (max-width: 670px) {
+    &:hover {
+      transform: none;
+    }
+  }
 `;
 
 const LinkWrap = styled.a`

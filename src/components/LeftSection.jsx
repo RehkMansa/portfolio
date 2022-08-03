@@ -39,11 +39,21 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 670px) {
+    .header {
+      margin-bottom: 24px;
+    }
+  }
 `;
 
 const Navigation = styled.div`
   gap: 50px;
   margin-top: 50px;
+
+  @media screen and (max-width: 670px) {
+    display: none;
+  }
 `;
 
 const NavWrap = styled.div`
@@ -69,6 +79,9 @@ const NavWrap = styled.div`
     display: block;
     transition: all 0.3s ease-in-out;
   }
+
+  @media screen and (max-width: 670px) {
+  }
 `;
 
 const SocialsWrapper = styled.div`
@@ -83,6 +96,10 @@ const SocialsWrapper = styled.div`
     &:hover {
       opacity: 1;
     }
+  }
+
+  @media screen and (max-width: 670px) {
+    margin-top: 10px;
   }
 `;
 

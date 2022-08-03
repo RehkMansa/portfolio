@@ -7,6 +7,12 @@ const Wrapper = styled.div`
   position: relative;
   grid-template-columns: 47% 1fr;
   height: 100%;
+
+  @media screen and (max-width: 670px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Fixed = styled.div`
@@ -14,6 +20,12 @@ const Fixed = styled.div`
   height: 100vh;
   padding: 100px 0px;
   padding-left: 16%;
+
+  @media screen and (max-width: 670px) {
+    height: 100%;
+    max-width: 100%;
+    padding: 50px 5%;
+  }
 `;
 
 const MainWrapper = styled.main`
@@ -22,6 +34,11 @@ const MainWrapper = styled.main`
   height: 100vh;
   overflow-y: auto;
   position: relative;
+
+  @media screen and (max-width: 670px) {
+    padding: 50px 5%;
+    width: 100%;
+  }
 `;
 const Layout = () => {
   return (

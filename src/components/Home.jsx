@@ -51,6 +51,25 @@ const Wrapper = styled.div`
       font-size: 20px;
     }
   }
+
+  @media screen and (max-width: 757px) {
+    .header {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 670px) {
+    .header {
+      .navigation {
+        color: var(--text-white);
+        gap: 20px;
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  } ;
 `;
 
 const ProjectWrapper = styled.div`
@@ -61,6 +80,12 @@ const ProjectWrapper = styled.div`
     opacity: 1;
     box-shadow: 0 -2px 10px 5px rgba(21, 21, 21, 0.6);
   }
+
+  @media screen and (max-width: 670px) {
+    &:hover > article {
+      opacity: 1;
+    }
+  }
 `;
 const Home = ({ repos, setRepos }) => {
   const loader = () => {
@@ -69,7 +94,6 @@ const Home = ({ repos, setRepos }) => {
     }
     return;
   };
-
 
   useEffect(() => {
     loader();
