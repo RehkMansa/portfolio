@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import Icon from './Icon';
 
 const Wrapper = styled.div`
   .header {
@@ -56,46 +57,10 @@ const Navigation = styled.div`
   }
 `;
 
-const NavWrap = styled.div`
-  a {
-    gap: 10px;
-    font-weight: 700;
-    font-size: 1rem;
-    opacity: 0.89;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-  a.active,
-  a:hover {
-    color: var(--text-white);
-    .line {
-      width: 48px;
-    }
-  }
-  .line {
-    width: 24px;
-    background-color: #fff;
-    height: 1px;
-    display: block;
-    transition: all 0.3s ease-in-out;
-  }
-
-  @media screen and (max-width: 670px) {
-  }
-`;
-
 const SocialsWrapper = styled.div`
   margin-top: 90px;
   gap: 30px;
   .icon-wrap {
-    gap: 10px;
-    color: var(--text-white);
-    opacity: 0.8;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 1;
-    }
   }
 
   @media screen and (max-width: 670px) {
@@ -103,24 +68,6 @@ const SocialsWrapper = styled.div`
   }
 `;
 
-const NavItem = (props) => {
-  return (
-    <NavWrap>
-      <NavLink className="flex-center jc-s" to={props.link}>
-        <span>{props.number}</span> <span className="line"></span>
-        {props.name}
-      </NavLink>
-    </NavWrap>
-  );
-};
-const Icon = ({ iconClass, name }) => {
-  return (
-    <div className="icon-wrap flex ai-c">
-      <i className={iconClass}></i>
-      <p>{name}</p>
-    </div>
-  );
-};
 const LeftSection = () => {
   return (
     <Wrapper>
