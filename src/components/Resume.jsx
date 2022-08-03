@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import Experience from './Experience';
 import Stack from './Stack';
-import { stacks } from './utils/data';
+import { pastExperience, stacks } from './utils/data';
 
 const Wrapper = styled.div``;
 
@@ -66,6 +67,14 @@ const Resume = () => {
         </ContentArticle>
         <ContentArticle>
           <h3>Past Experience</h3>
+          {pastExperience.map((exp, n) => (
+            <Experience
+              key={n}
+              name={exp.name}
+              duration={exp.duration}
+              role={exp.role}
+            />
+          ))}
         </ContentArticle>
       </ContentWrapper>
     </Wrapper>
