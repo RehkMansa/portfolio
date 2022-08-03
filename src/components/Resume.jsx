@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Stack from './Stack';
 import { stacks } from './utils/data';
 
 const Wrapper = styled.div``;
@@ -32,14 +33,6 @@ const ContentArticle = styled.article`
   .stack-container {
     flex-wrap: wrap;
     gap: 15px 20px;
-  }
-`;
-
-const StackWrapper = styled.div`
-  gap: 10px;
-  p {
-    font-weight: 500;
-    font-family: var(--font-header);
   }
 `;
 
