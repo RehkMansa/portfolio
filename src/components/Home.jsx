@@ -97,9 +97,7 @@ const Home = ({ repos, setRepos }) => {
 
   useEffect(() => {
     loader();
-
-    console.log('mounter');
-  }, [loader]);
+  }, []);
 
   const [currentTab, setCurrentTab] = useState(0);
   return (

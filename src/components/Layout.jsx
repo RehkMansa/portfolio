@@ -37,7 +37,9 @@ const MainWrapper = styled.main`
 
   @media screen and (max-width: 670px) {
     padding: 20px 5%;
+    height: 100%;
     width: 100%;
+    min-height: 300px;
   }
 `;
 const Layout = () => {
