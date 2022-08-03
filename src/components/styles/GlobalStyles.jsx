@@ -99,6 +99,12 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.2;
     font-family: 'Ubuntu', sans-serif;
   }
+
+  @media screen and (max-width: 757px){
+    p{
+      font-size: 15px;
+    }
+  }
 `;
 
 export default GlobalStyle;

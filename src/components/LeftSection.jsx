@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  // border: 1px solid red;
   .header {
     margin-bottom: 40px;
     h1 {
@@ -23,10 +22,20 @@ const Wrapper = styled.div`
   .description {
     p {
       line-height: 2;
-      // font-family: ubuntu;
 
       span {
         color: var(--text-white);
+      }
+    }
+  }
+
+  @media screen and (max-width: 757px) {
+    .header {
+      h1 {
+        font-size: 4.25rem;
+      }
+      h4 {
+        font-size: 2rem;
       }
     }
   }

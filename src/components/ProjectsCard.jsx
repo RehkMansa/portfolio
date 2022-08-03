@@ -57,6 +57,12 @@ const LinkWrap = styled.a`
   .description {
     line-height: 1.5;
   }
+
+  @media screen and (max-width: 757px) {
+    .date-meta {
+      flex-wrap: wrap;
+    }
+  }
 `;
 
 const ProjectsCard = ({
