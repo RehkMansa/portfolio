@@ -6,7 +6,8 @@ const Wrapper = styled.div`
 
   .role-wrapper {
     position: relative;
-    gap: 5px;
+    gap: 20px 5px;
+    flex-wrap: wrap;
 
     p {
       background-color: rgba(101, 101, 103, 0.3);

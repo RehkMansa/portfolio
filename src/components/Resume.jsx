@@ -65,7 +65,7 @@ const Resume = () => {
             ))}
           </div>
         </ContentArticle>
-        <ContentArticle>
+        <ContentArticle className="g-30">
           <h3>Past Experience</h3>
           {pastExperience.map((exp, n) => (
             <Experience
