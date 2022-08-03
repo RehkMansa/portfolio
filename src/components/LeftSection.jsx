@@ -1,9 +1,11 @@
-import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Icon from './Icon';
+import MobileMenu from './MobileMenu';
+import NavItem from './NavItem';
 
 const Wrapper = styled.div`
   .header {
+    position: relative;
     margin-bottom: 40px;
     h1 {
       font-size: 6.25rem;
@@ -51,9 +53,12 @@ const Wrapper = styled.div`
 const Navigation = styled.div`
   gap: 50px;
   margin-top: 50px;
+  display: flex;
 
   @media screen and (max-width: 670px) {
     display: none;
+    gap: 0px;
+    margin-top: 0px;
   }
 `;
 
@@ -67,13 +72,13 @@ const SocialsWrapper = styled.div`
     margin-top: 10px;
   }
 `;
-
 const LeftSection = () => {
   return (
     <Wrapper>
       <div className="header">
         <h1>Rehk Mansa</h1>
         <h4>Freelance Frontend Developer</h4>
+        <MobileMenu />
       </div>
       <div className="description">
         <p>
@@ -83,7 +88,7 @@ const LeftSection = () => {
           <span> solve problems</span>. I am currently interested in
           <span> building interactive</span> UI's for game development.
         </p>
-        <Navigation className="flex f-c ac-s">
+        <Navigation className="f-c ac-s">
           <NavItem name="Projects" link="/" number={'00'} />
           <NavItem name="Resume" link="resume" number={'01'} />
           {/* <NavItem name="Articles" link="write-ups" number={'02'} /> */}

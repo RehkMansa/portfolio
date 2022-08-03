@@ -1,3 +1,5 @@
 #root{
   color: rgba(21, 21, 21, 0.6);
+
+    --bg-dark: rgb(21, 21, 21);
 }

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 const NavWrap = styled.div`
   a {
@@ -30,7 +31,7 @@ const NavWrap = styled.div`
 
 const NavItem = (props) => {
   return (
-    <NavWrap>
+    <NavWrap className={props.className}>
       <NavLink className="flex-center jc-s" to={props.link}>
         <span>{props.number}</span> <span className="line"></span>
         {props.name}

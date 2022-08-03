@@ -24,7 +24,7 @@ const Fixed = styled.div`
   @media screen and (max-width: 670px) {
     height: 100%;
     max-width: 100%;
-    padding: 50px 5%;
+    padding: 30px 5%;
   }
 `;
 
@@ -36,7 +36,7 @@ const MainWrapper = styled.main`
   position: relative;
 
   @media screen and (max-width: 670px) {
-    padding: 50px 5%;
+    padding: 20px 5%;
     width: 100%;
   }
 `;
