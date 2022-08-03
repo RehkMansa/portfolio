@@ -113,7 +113,7 @@ const LeftSection = () => {
         <Navigation className="flex f-c ac-s">
           <NavItem name="Projects" link="/" number={'00'} />
           <NavItem name="Resume" link="resume" number={'01'} />
-          <NavItem name="Articles" link="write-ups" number={'02'} />
+          {/* <NavItem name="Articles" link="write-ups" number={'02'} /> */}
         </Navigation>
         <SocialsWrapper className="flex-20 ai-c ">
           <Icon iconClass="fab fa-github" name="GitHub" />

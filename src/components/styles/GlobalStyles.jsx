@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     --text-dark: #949495;
     --text-white: #fff;
     --text-alt: #f5f5fa;
+    --font-header: 'Ubuntu', sans-serif;
   }
   html, body {
     height: 100%;

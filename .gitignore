@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 src/components/style.css
 src/components/blank.js
-src/components/utils
+src/components/utils/helper.js
 .vscode/settings.json
