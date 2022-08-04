@@ -95,9 +95,21 @@ const LeftSection = () => {
           {/* <NavItem name="Articles" link="write-ups" number={'02'} /> */}
         </Navigation>
         <SocialsWrapper className="flex-20 ai-c ">
-          <Icon iconClass="fab fa-github" name="GitHub" />
-          <Icon iconClass="fab fa-linkedin" name="Linkedin" />
-          <Icon iconClass="fa-solid fa-at" name="Email" />
+          <Icon
+            link={'https://github.com/RehkMansa'}
+            iconClass="fab fa-github"
+            name="GitHub"
+          />
+          <Icon
+            link={'https://www.linkedin.com/in/godspower-nathaniel-768355212/'}
+            iconClass="fab fa-linkedin"
+            name="Linkedin"
+          />
+          <Icon
+            link={'mailto:godspowernathaniel25@gmail.com'}
+            iconClass="fa-solid fa-at"
+            name="Email"
+          />
         </SocialsWrapper>
       </div>
     </Wrapper>
