@@ -10,7 +10,7 @@ const Wrapper = styled.a`
   }
 
   @media screen and (max-width: 670px) {
-    opacity: 1 ;
+    opacity: 1;
   }
 `;
 
