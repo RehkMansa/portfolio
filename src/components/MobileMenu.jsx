@@ -85,7 +85,7 @@ const MobileMenu = () => {
                 <i className="fa-solid fa-xmark"></i>
               </div>
             </WrapperHeader>
-            <LinkWrapper className="flex-20 f-c ai-s">
+            <LinkWrapper className="flex f-c ai-s">
               <div onClick={closeToggler}>
                 <NavItem
                   className="override-style"
