@@ -72,6 +72,7 @@ const SocialsWrapper = styled.div`
     margin-top: 10px;
   }
 `;
+
 const LeftSection = () => {
   return (
     <Wrapper>

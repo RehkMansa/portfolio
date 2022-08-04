@@ -8,9 +8,13 @@ const Wrapper = styled.div``;
 const Header = styled.div`
   gap: 10px;
   margin-bottom: 24px;
+  justify-content: space-between;
 
   h2 {
     font-size: 20px;
+  }
+  .header-left {
+    gap: 10px;
   }
 `;
 
@@ -37,12 +41,32 @@ const ContentArticle = styled.article`
   }
 `;
 
+const ResumeLink = styled.a`
+  color: var(--text-white);
+
+  &:hover {
+    color: var(--text-white);
+  }
+`;
+
 const Resume = () => {
   return (
     <Wrapper>
       <Header className="flex ai-c">
-        <i className="fa-solid fa-file-lines"></i>
-        <h2>My Resume</h2>
+        <div className="flex ai-c header-left">
+          <i className="fa-solid fa-file-lines"></i>
+          <h2>My Resume</h2>
+        </div>
+        <ResumeLink
+          rel="noreferrer"
+          target={'_blank'}
+          href="https://docs.google.com/document/d/1ReJCpzXqKKkwd6hhLSsLEa1CEk78IBQkSOTMRRlrO-M/edit?usp=sharing"
+        >
+          <div className="flex ai-c header-left">
+            <p>View</p>
+            <i className="fa-solid fa-file-lines"></i>
+          </div>
+        </ResumeLink>
       </Header>
 
       <ContentWrapper className="flex-20 ai-s f-c">

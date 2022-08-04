@@ -42,6 +42,18 @@ const MainWrapper = styled.main`
     min-height: 300px;
   }
 `;
+
+const InspiredWrapper = styled.div`
+  font-family: var(--font-header);
+  margin-top: 20px;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: 1px;
+
+  span {
+    color: var(--text-white);
+  }
+`;
 const Layout = () => {
   return (
     <Wrapper>
@@ -50,6 +62,18 @@ const Layout = () => {
       </Fixed>
       <MainWrapper>
         <Outlet />
+        <InspiredWrapper>
+          <p>
+            Inspired by{' '}
+            <a
+              target={'_blank'}
+              rel={'noreferrer'}
+              href="https://www.kingslee.me"
+            >
+              <span>kingslee</span>
+            </a>
+          </p>
+        </InspiredWrapper>
       </MainWrapper>
     </Wrapper>
   );

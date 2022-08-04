@@ -45,11 +45,13 @@ const Container = styled.div`
 
 const LinkWrapper = styled.div`
   margin-top: 20%;
-  gap: 30px;
+  gap: 50px;
+  width: 100%;
   .override-style {
     a {
       font-size: 1.6rem;
       font-weight: 500;
+      color: var(--text-white);
     }
     .line {
       display: none;
