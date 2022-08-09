@@ -12,7 +12,7 @@ export const fetchRepos = (setRepos) => {
           fork,
           name,
           html_url,
-          created_at,
+          pushed_at,
           updated_at,
           description,
           language,
@@ -25,7 +25,7 @@ export const fetchRepos = (setRepos) => {
           url: html_url,
           language,
           date: {
-            createdAt: format(new Date(created_at), 'isoDate'),
+            createdAt: format(new Date(pushed_at), 'isoDate'),
             updatedAt: format(new Date(updated_at), 'isoDate'),
           },
         };
