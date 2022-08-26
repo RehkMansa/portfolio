@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Experience from './Experience';
 import Stack from './Stack';
+import {aboutMe} from './utils/data';
 import { pastExperience, stacks } from './utils/data';
 
 const Wrapper = styled.div``;
@@ -72,14 +73,7 @@ const Resume = () => {
       <ContentWrapper className="flex-20 ai-s f-c">
         <ContentArticle className="flex-20 f-c">
           <h3>About Me</h3>
-          <p>
-            Hello my name is Godspower Nathaniel, I'm a frontend developer,
-            interested in having my lines of code in a popular opensource repo.
-            I love startups, game development and basically everything tech.
-            That said, I want to launch a startup that actually solves problems,
-            at the same time build my own game. Everything I do is a step to my
-            goal
-          </p>
+          <p>{aboutMe}</p>
         </ContentArticle>
         <ContentArticle>
           <h3>Tech Stack</h3>
